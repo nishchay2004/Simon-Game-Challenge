@@ -1,0 +1,26 @@
+Updated | BDD Test Case Support
+Problem Statement: Currently, the Test Management tool allows users to create test cases
+in only two formats: Text or Steps. Some users have requested support for a BDD template
+to create, import, and export test cases. This is a feature request from an existing customer
+and will help bring our product to feature parity with competitors.
+Requirements:
+Phase 1: BDD Template
+The user should be able to create test cases in Gherkin format BDD.
+Functionalities like
+Feature , Scenario Outline , and Examples should be supported.
+The tests should appear with proper color formatting.
+The user should be able to execute BDD test cases manually and via automation BDD
+Json/Junit XML.
+Phase 1: Importing and Exporting
+The user should be able to export test cases in
+.csv or .feature file format. This export capability should be available both at
+the top of the panel and to the right side of each test case.
+The user should be able to import test cases using
+.feature files or .csv files.
+Import BDD test cases from Zephyr Quick Import and TestRail Quick Import. For Zephyr
+and TestRail, each
+Scenario in Gherkin format should be treated as a separate test case within Test
+Management.
+Non-functional Requirements and RBAC
+All Test Management users should be able to use this feature unless it is featurefenced.
+Access permissions should follow the same rules as other test types in the tool.
