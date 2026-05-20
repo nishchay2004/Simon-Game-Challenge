@@ -1,0 +1,41 @@
+Feature Requirement: Increase Data Retention from 1 Month to 6 Months for Paid Users
+Background/Overview:
+Currently, in our charting tool, users can upload their data in CSV format. This data is stored for 1 month before it is automatically deleted. We’ve received feedback from multiple paid users who expressed the need for a longer data retention period to avoid the hassle of re-uploading the same datasets. We want to address this by increasing data retention for paid users from 1 month to 6 months.
+This change will improve user experience by providing more flexibility and convenience, especially for users who frequently analyze long-term trends or data. Non-paid (free-tier) users will continue to have the 1-month data retention, so we need to implement this restriction carefully without disrupting the current system.
+Goals & Objectives:
+Increase data retention for paid users from 1 month to 6 months.
+Ensure free-tier users continue to have the 1-month retention period.
+Improve customer satisfaction for premium users, which should help in user retention and drive conversions to paid plans.
+Provide clear notifications to paid users about the extended data retention period when they upload CSVs.
+Feature Scope:
+Data Retention Extension:
+For users on any paid plan, their uploaded CSV data will now be stored for 6 months from the date of upload, instead of the current 1-month limit.
+Free-tier users’ data will continue to expire after 1 month.
+User Segmentation:
+We’ll need to differentiate between paid and free users at the point of data upload and retention.
+Based on the user’s subscription status, adjust the expiration date of their data accordingly in the system.
+User Experience:
+After a CSV upload, paid users will see a confirmation that their data will be stored for 6 months.
+Free users will continue to see the 1-month limit.
+Notifications & Alerts:
+Paid users should receive an email reminder when their data is approaching the 6-month expiry period (e.g., 1 week before).
+Free users will continue to receive a reminder before the 1-month expiry.
+Backend Changes:
+The existing database table handling data storage for uploaded files needs to be adjusted. We will store a new expiration date (based on the 6-month limit) for paid users.
+Engineering needs to ensure that storage usage is scalable since the amount of stored data will increase significantly.
+Data clean-up scripts that purge old files will need to accommodate these different timelines and run according to the new limits.
+User Interface Changes:
+Update messaging in the UI to reflect the extended retention period for paid users.
+Add a small note or icon in the user dashboard to indicate when the uploaded data is set to expire, based on the user's plan.
+Assumptions:
+The user’s subscription status is already properly tracked, and we can easily query whether the user is on a free or paid plan when they upload data.
+This will not impact performance or slow down data retrieval or uploads.
+Storage infrastructure will be able to handle the additional data, but this needs to be confirmed with the engineering team.
+Risks:
+Storage Overload: With a 6-month retention period, there’s a potential risk of hitting storage limits if the number of users or the size of the data uploads grows significantly. We need to ensure that our backend can handle the increased storage requirements.
+Data Migration: For users who are already on a paid plan and have existing data under the 1-month retention rule, we may need to update their data’s expiration date to the new 6-month window. This will require careful coordination to avoid accidental deletion.
+Clear Communication: Users should clearly understand the difference in retention limits based on their plan to avoid confusion or frustration. This needs to be highlighted in the product UI, on the subscription page, and in support documentation.
+Success Criteria:
+Paid users experience the 6-month retention without disruptions, and the system continues to perform well under the increased data load.
+Free users are not affected, and their 1-month retention limit is enforced consistently.
+Increased user engagement and satisfaction from paid users due to the extended retention period, leading to fewer complaints and potentially increased conversions to paid plans.

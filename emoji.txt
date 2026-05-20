@@ -1,0 +1,233 @@
+Emoji Reactions on Twitter Messages 
+Current Status: On Track, M1 ongoing 
+Links: Pitch Doc | Backend Tech Spec | Frontend Tech Spec | Design Spec | QA bPlan 
+What are emoji reactions? 
+It is a new feature we are proposing which let users react to a Message –– both text and media attachments with an emoji 
+Why build this feature? 
+- It is part of Twitter Messages Team’s OKRs 
+- OKR - O1 from Twitter Messages Team’s H2’19 OKRs: Close feature parity gaps with competition on key use cases 
+- KR - Launch Emotion Reaction 
+- Usage of Twitter Messages 
+- 150 million DAU of Twitter 
+- 15 million daily unique users of Messages 
+- ~10% of DAU send a Message 
+- This makes Messages one of the most popular features of Twitter and something we should focus on to be the best at 
+- Recent report by our Data Science team showed a strong correlation between usage of Twitter Messages with short term retention (STR) (7 day) - New users who sent a direct message within the first 1 week had a 40% higher chance of short term retention than users who did not 
+- Detailed report here 
+- Improving short term retention is one of the main OKRs for Twitter in H2’19 
+- Over the last one month period 
+- 10% of DAU of Messages have sent an emoji as a message reply - This implies that emoji reactions can often replace the need for 
+follow-up messages or replies in Messages 
+- 14% of all message replies sent during a day are emojis 
+- Currently ~37 million messages being sent daily 
+- 3 most commonly used emojis (Thumbs up, The face with tears of joy, The Red heart) count as 5% of all message replies 
+- Request from users 
+- Survey findings 
+- We recently sent out a survey to 10 million power users of Messages (power users = those who have used direct message at least 10/ last 
+30 days, and sent 30 messages in that period) 
+- Details on the survey sent and its findings can be found here
+- Ability to add emojis as a reaction counted as the 2nd most requested feature 
+- Focus Group Discussions (FGD) 
+- We did an FGD in our SF office 
+- Details can be found here 
+- The FGD report also mentioned emoji replies as a ‘must have’ new feature 
+- Zendesk Tickets 
+- 20% of tickets on Zendesk which are marked as Feature requests mentioned emoji reactions 
+- This included requests from 
+- Play Store 
+- Social Media requests 
+- Support requests from Twitter app 
+- Competition parity 
+- Facebook introduced the ability to react to DMs more than a year ago and our competitor intel team has mentioned that 1/4th of Facebook DM users in the last one month have used an emoji reaction 
+
+Pre Launch Data & Research 
+Key Numbers for Twitter Messages 
+Request from users: Survey findings 
+Request from users: FGD findings 
+Report on impact of Twitter Messages on STR 
+Feature requests on Zendesk Report 
+Main User Stories 
+- As a user, I would like to react with an emoji to a message sent to me - As a user, I would like to inform the sender about my reaction 
+- As a user, I would like the ability to undo my reaction if needed 
+- As a user, I would like to express positive, neutral as well as negative emotions through this reaction feature
+Goals of this feature 
+- Make Messages the best in class messaging product by introducing highly requested features like emoji reactions 
+- Competition parity 
+- Improve STR of Twitter users by giving the best messaging experience possible 
+Success metrics 
+- 5% of DAU of Messages should send a reaction 
+- Half of DAU of Messages who have sent emoji as a message reply - Reactions should be around 5% of messages sent daily 
+- Improve STR of new Twitter users by 10% 
+Potential metrics watch out / impact 
+- Messages sent daily 
+- 14% of all message replies sent during a day are emojis 
+- 3 most commonly used emojis (Thumbs up, The face with tears of joy, The Red heart) count as 5% of all message replies 
+- If we introduce emoji reactions #messages sent daily will be negatively impacted 
+- Based on anecdotes during FGDs, users send emojis as reply when they have nothing more to say 
+- Reaction is even more low friction and impersonal (arguably) and hence it might indicate to the recipient that the sender is no longer interested in the conversation. This is a hypothesis on why messages sent might do down further with introduction of reaction emojis 
+- We will validate this through UTs and also data collected post launch - Unique message senders 
+- Daily average of 4 million users who have sent an emoji as a message reply - Out of these 4 million, ~100k users sent an emoji as the only message during the day 
+- We either need to change the definition of message senders to include emoji reaction senders or accept that this number will go down 
+- Short Term Retention (STR) of Twitter new users 
+- Usage of Messages feature has a positive impact on STR of Twitter new users 
+- Building a better Messaging product should help in improving STR - We will test impact on STR by doing an AB test 
+- F will be new users without this new reactions feature 
+- Experiment variant will be the segment of new users who have access to emoji reactions 
+- Detailed experiment plan can be found here
+- Usage of each emoji 
+- For now we are going with 7 most commonly used emojis to describe a range of emotions (from positive to negative) 
+- We will monitor the usage of each 
+DACI 
+Decision
+Driver
+Approver
+Contributors
+Informed
+We have decided to show only 7 emojis as of now. Those emojis have been selected based on this
+framework
+Anurag
+Anurag’s Boss
+(Note: In some cases it can be Anurag himself or some external stakeholder.
+Depends on who is the owner of this decision)
+<Add relevant people who
+contributed to
+this decision
+here>
+<Add relevant
+people who
+have been
+informed about
+this decision
+here>
+
+
+Product Requirements (The What) 
+
+Requirement
+Priority
+Phase/Milestone
+Status
+Show Reaction button (heart and plus icon) next to the message when user hovers over the message on Mobile apps (Android and iOS)
+Must Have
+M1
+Done
+React to a message by tapping the reaction button (heart and plus icon) and using the pop-up
+Must Have
+M1
+Done
+React to a message by long pressing on the message and then tapping the reaction button
+Must Have
+M1
+Done
+Show pop-up with 7 pre defined emojis
+Must Have
+M1
+Done
+On selecting emoji, give feedback to the sender by attaching emoji with the message
+Must Have
+M1
+Ongoing
+Show reaction attached with the message to the recipient
+Must Have
+M1
+Ongoing
+Onboarding/ Discovery for
+this feature
+Must Have
+M1
+Ongoing
+Send notification to recipient about this reaction by adding +1 on the Notification counter on Messages
+Should Have
+M2
+Yet to Start
+Remove/undo reaction by tapping on the emoji next to the message
+Should Have
+M2
+Yet to Start
+Remove/undo reaction by tapping on the same emoji on the popup
+Should Have
+M2
+Yet to Start
+Counter next to emoji reaction: Needed for group messages
+Should Have
+M2
+Yet to Start
+Send push notification to recipient when she gets a reaction
+Should Have
+M2
+Yet to Start
+
+
+User Flows (link to mocks)
+
+
+
+How do we educate customers about this feature?
+● <Onboarding flow for this feature come here> 
+● <Different hooks through which we can expose this feature to the user or remind her about its existence come here?> 
+Non-Product Requirements 
+Requirement 
+Priority 
+Phase/Milestone 
+PIC
+Status
+Marketing: Update Twitter Blog page on Messages
+Must Have 
+Post M3 
+Marketing
+Yet to Start
+Marketing:Announce feature to the world through our social media accounts
+Must Have 
+Post M3 
+Marketing
+Yet to Start
+Start PR for this feature
+Must Have
+Post M3 
+PR
+Yet to Start
+
+
+
+
+
+Out of scope for now 
+- Reacting to a message in the Message requests section 
+- Reacting with emojis other than the predefined 7 emojis launching with M1 
+Configurability 
+- This feature should be configurable based on 
+- UserIds 
+- Location 
+- OS 
+- Device 
+- User segments 
+Roll out Plan 
+- M1 
+- Alpha on 10th Nov 
+- Beta on 20th Nov provided there are no major bugs or concerns in Alpha - Will launch on Prod as an experiment on 25th Nov 
+- Experiment plan 
+- M2
+- Alpha on 7th Dec 
+- Beta on 14th Dec provided there are no major bugs or concerns in Alpha - Will launch on Prod after we have results on M1 experiment results - Rough timeline 20th Dec 
+- M3 
+- Alpha on 5th Dec 
+- Beta on 14th Jan provided there are no major bugs or concerns in Alpha - Prod on 24th Jan 
+
+Detailed roll out plan with details on experiments we will be running 
+Post launch research plan comes here
+Post launch impact analysis comes here 
+Open Questions 
+- [Stakeholder from Marketing] How did we select the 7 emojis we are showing in M1 - [Anurag from Product] 
+- We went through the most commonly used emojis 
+- on social media in general 
+- on twitter 
+- on our competitors 
+- Finally selection 7 to show all 3 types of emotions 
+- Positive 
+- Negative 
+- Neutral 
+- Link to the emojis and why they were selected to M1 here 
+- [Stakeholder from PR] Will we start shipping on Prod starting from M1? Should we wait till M3 for our PR drive around this feature? 
+- [Anurag from Product] 
+- We will start doing experiments starting M1 
+- PR can wait till all 3 Milestones are shipped on prod 
