@@ -1,0 +1,134 @@
+Managing Platforms
+Overview
+Add Platforms
+Edit Platforms
+Link Platforms to Test Suite
+Archive and Delete Platforms
+Sharing Platforms
+Import Platforms from Other Projects
+Copy Platforms to Other Projects
+Bulk Operations
+Platform Attributes
+Overview
+Platforms under the Projects modules allow you to create different platforms to test builds against. A "platform" defines a specific configuration that is used to test software components/builds to deliver
+high-quality products.
+QMetry encourages its users to do comprehensive testing of software across different combinations of platforms.
+For example,
+Web applications platforms might be based on different combinations of OS and Browsers: Windows+IE8, Windows+FF, MacOS+FF, etc.
+Mobile applications might require combinations like: AT&T+IPhone 4G, Vodafone+IPhone 4G, Airtel+IPhone 4G, etc.
+Add Platforms
+The default platform -
+"No Platform" is available when a new project is created.
+Users can add more platform from Projects > Platforms & Attributes > Platforms.
+Expand the Projects section on the tree and open the Platforms & Attributes sub-section.
+There are two tabs on the screen: Platforms and Platform Attributes.
+Open the Platforms tab.
+It opens a text box inline.
+Enter the name of the platform in that box and click Save.
+A new platform is added to the list.
+Now when you open the test suite detail page in the Test Suites module, you can view that the newly added platform is available on the list of platforms for linkage.
+Edit Platforms
+Go to Projects > Platforms & Attributes > Platforms.
+The screen shows list of added platforms.
+Hover the mouse over the Platform name you want to modify. You can see the Edit icon on hover.
+Click on the cell to change the Platform name.
+Link Platforms to Test Suite
+Go to the Test Suite module.
+Open test suite details page.
+One default platform “No Platform” is provided. Users can add more platform from Projects > Platforms & Attributes > Platforms.
+Open the Platforms tab and click on the Link button.
+The next screen opens with the list of platforms available to link with test suites.
+Select platforms that you want to link with the test suite.
+Click on the Link Selected Platforms button at the bottom.
+To add new platform, click on the Create New Platform link just above the list of platforms.
+New platforms added by users appear on the same screen.
+Now check the Test Suite details page.
+The test suite to which you recently linked platforms will appear in the Test Executions module.
+Archive and Delete Platforms
+Users can archive platforms that are no longer required. The archived platforms are then not displayed on the Link Platform screen in the Test Suite module, from where platforms are linked to a
+particular test suite.
+Notes:
+The default platform "No Platform" can not be archived.
+If the platform that is being deleted is associated with any test suite, and the associated test suites were already executed, then you will not be able to perform any operations on the execution
+screen of the respective test run(s).
+Once a platform is archived, you can either Uarchive or Delete it.
+On the Platforms screen, select the Show Archived check box to view archived platforms.
+Delete Platforms
+To delete a platform it should be archived first. Once a platform is archived, you can delete it by clicking on the Delete button.
+Unarchive Platforms
+To unarchive an archived platform, click on the Unarchive button for that platform.
+Sharing Platforms
+QTM allows the sharing of Platforms to multiple projects. Users can easily copy the Platform values from a source project to multiple destination projects, which eliminates the need for manual
+duplication and ensures consistency across projects sharing the same Platforms.
+The events of Copy and Import of Platforms are also logged in the Audit Log Report.
+Use Case: The project admin wants to reuse the existing Platform values of one project in other multiple projects so that they do not have to manually add the Platform values in each project and
+maintain them separately.
+→ Required Permissions:
+The user should have the following permissions for creating/modifying Platforms.
+Source/Destination Permissions
+Source Project
+(The Project from where the platforms will be copied)
+Destination Project
+(The Project where the platforms will be created)
+Project “View” permission
+Platform “View” permission
+Customization “View” permission
+Project “View” and “Modify” permission
+Platform “View” and “Modify” permission
+Customization “View” and “Modify” permission
+Import Platforms from Other Projects
+Steps
+1. Go to Projects > Platforms & Attributes > Platforms tab.
+2. Click on the Import button.
+The Import from Other Project screen opens.
+3. Select the Project from where you want to import the Platforms.
+4. Select either of the following:
+Import only the Platforms: Only platforms will be imported excluding the platform attributes underneath the platforms.
+Import Platforms and their associated Platform Attributes: This option will import the selected platforms and all their linked platform attributes, along with the set values of the fields Tag at Runtime,
+Is Mandatory, and Default Value. The option appears disabled if the user does not have the Customization “View” and “Modify” permission.
+5. Select the Platform values that you want to import in the existing project.
+Note: A maximum of 50 Platforms can be selected at a time.
+6. Click on the Import button.
+You can view the progress in the Scheduled Task section.
+The Platform values get imported into the project.
+Copy Platforms to Other Projects
+Steps
+1. Go to Projects > Platforms & Attributes > Platforms tab.
+2. Select the Platform values you want to copy to other projects.
+Note: A maximum of 50 Platforms can be selected at a time.
+3. Click on the Copy button.
+The Copy to Other Projects screen opens.
+4. Select Projects on the drop-down list. You can view only those projects on the list to which you have access.
+Note: Maximum 5 projects can be selected at a time.
+5. Select either of the following options.
+Copy only the Platforms: Only platforms will be copied excluding the platform attributes underneath the platforms.
+Copy Platforms and their associated Platform Attributes: This option will copy the selected platforms and all their linked platform attributes, along with the set values of the fields Tag at Runtime, Is
+Mandatory, and Default Value. The option appears disabled if the user does not have the Customization “View” and “Modify” permission.
+6 Click on the Copy button.
+Note: Duplicate platforms will be ignored during the Copy.
+You can view the progress in the Scheduled Task section.
+The Platforms get copied to other selected projects.
+Bulk Operations
+The Bulk Operations feature for Platforms allows users to carry out the following operations on multiple platforms at a time:
+Bulk Archive Platforms
+Bulk Delete Platforms
+Bulk Unarchive Platforms
+Where to find the Bulk Operations feature?
+1. Go to Projects > Platforms & Attributes > Platforms.
+2. Click on the settings icon and select Bulk Operations.
+The screen by default displays all the active platforms for the project. Buttons at the bottom will be enabled once you select platforms.
+Bulk Archive Platforms
+To archive platforms in bulk, select the platforms and click on the Archive button at the bottom.
+The confirmation message pops up. Click Yes to proceed.
+Bulk Delete Platforms
+As mentioned above, to delete a platform, first it should be archived.
+1. On the Bulk Operations screen, select the Show Only Archived check box.
+2. The screen displays only those platforms that are archived.
+3. Click on the Delete button at the bottom.
+Bulk Unarchive Platforms
+You can unarchive the archived platforms to bring them in use again.
+1. On the Bulk Operations screen, select the Show Only Archived check box.
+2. The screen displays only those platforms that are archived.
+3. Click on the Unarchive button at the bottom.
+Platform Attributes
+Refer to Platform Attributes for more details.
